@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plaza</title>
+<script>
+function main() {
+    var a = promptnum("Input the number of the first side: ");
+    var b = promptnum ("Input the length of the second side side: ");
+    var c = promptnum("Input the length of the last side: ");
+    triangle(a, b, c);
+}
+
+function promptnum(promptText) {
+    let num = prompt(promptText);
+    if (isNaN(num)) {
+        return promptnum(promptText);
+    }
+    return parseFloat(num);
+}
+
+function triangle(a, b, c) {
+    if (a === b && b === c) {
+        window.alert("The triangle is EQUILATERAL.");
+    } else if (a === b || a === c || b === c) {
+        window.alert("The triangle is ISOSCELES.");
+    } else {
+        window.alert("The triangle is SCALENE.");
+    }
+}
+
+main();
+</script>
+</html>
